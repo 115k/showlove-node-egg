@@ -11,12 +11,16 @@ module.exports = appInfo => {
    * @type {Egg.EggAppConfig}
    **/
   const config = exports = {};
+  // 关闭csrf校验
+  config.security = {
+    csrf: false,
+  };
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1565691397038_433';
 
   // add your middleware config here
-  config.middleware = [];
+  config.middleware = [ 'errorHandler' ];
 
   // add your user config here
   const userConfig = {
